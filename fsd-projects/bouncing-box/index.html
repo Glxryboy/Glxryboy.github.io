@@ -87,7 +87,14 @@
 
           positionX = positionX + speed;
 
-          if (positionX > boardWith){
+          // see if box fell off RIGHT side of screen
+          if (positionX > boardWidth){
+            
+            speed = speed * -1;
+          }
+
+          // see if box fell off lefT side of screen
+          if (positionX < 0){
             
             speed = speed * -1;
           }
@@ -109,12 +116,13 @@
 
           positionX = 0;
 
-          points += 1
-
-          speed = speed +3;
-
           changeBoxText(points);
 
+          points += 1
+
+          speed = 3 * points + 10;
+
+          
 
 
 
